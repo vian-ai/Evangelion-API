@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'evangelion.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'db_evangelion',
+        'NAME': 'db_evangelion',
     }
 }
 

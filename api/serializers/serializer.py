@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ..models.models import Characters, Units, Evangelion
+from ..models.models import Characters, EvaUnits, Evangelion
 
 class CharactersSerializer(serializers.ModelSerializer):
     class Meta:
@@ -8,11 +8,11 @@ class CharactersSerializer(serializers.ModelSerializer):
         
 class UnitsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Units
+        model = EvaUnits
         fields = ['id', 'name_en', 'name_jp', 'model_type', 'pilot', 'soul', 'image']
-        
-class EvangelionsSerializer(serializers.ModelSerializer):
+
+class EvangelionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Evangelion
-        fields = ['id', 'title_en', 'title_jp', 'type', 'episodes', 'genre', 'released', 'logo', 'characters', 'evangelions']
-        depth = 1
+        fields = ['id', 'title_en', 'title_jp', 'type', 'episodes', 'genre', 'released', 'logo', 'characters', 'units']
+        depth = 2
