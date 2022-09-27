@@ -17,15 +17,15 @@ class Characters(models.Model):
         return self.name_en
     
 class EvaUnits(models.Model):
-    eva_en = models.CharField(max_length=50, blank=False, null=False, default='N/A')
-    eva_jp = models.CharField(max_length=50, blank=False, null=False, default='N/A')
+    name_en = models.CharField(max_length=50, blank=False, null=False, default='N/A')
+    name_jp = models.CharField(max_length=50, blank=False, null=False, default='N/A')
     model_type = models.CharField(max_length=50, blank=False, null=False, default='N/A')
     pilot = models.CharField(max_length=50, blank=False, null=False, default='N/A')
     soul = models.CharField(max_length=50, blank=False, null=False, default='N/A')
     image = models.URLField(max_length=1024, null=True, blank=True)
 
     def __str__(self):
-        return self.eva_en
+        return self.name_en
 
 
 class Evangelion(models.Model):
