@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from ..models.models import EvaUnits, Evangelion, Characters
 from ..serializers.serializer import EvangelionSerializer, CharactersSerializer, UnitsSerializer
 
-class EvangelionViewsSet(viewsets.ModelViewSet):
+class EvangelionViewsSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = EvangelionSerializer
     
     def get_queryset(self):
@@ -37,14 +37,14 @@ class EvangelionViewsSet(viewsets.ModelViewSet):
         
         return Response(serializer.data)
 
-class CharactersViewSet(viewsets.ModelViewSet):
+class CharactersViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = CharactersSerializer
 
     def get_queryset(self):
         character = Characters.objects.all()
         return character
     
-class UnitsViewSet(viewsets.ModelViewSet):
+class UnitsViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = UnitsSerializer
     
     def get_queryset(self):

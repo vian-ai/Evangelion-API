@@ -27,13 +27,12 @@ class EvaUnits(models.Model):
     def __str__(self):
         return self.name_en
 
-
 class Evangelion(models.Model):
     title_en = models.CharField(max_length=50, blank=False, null=False, default='N/A')
     title_jp = models.CharField(max_length=50, blank=False, null=False, default='N/A')
     type = models.CharField(max_length=50, blank=False, null=False, default='N/A')
     episodes = models.IntegerField()
-    genre = ArrayField(models.CharField(max_length=255, null=True))
+    genre = ArrayField(models.CharField(max_length=255, blank=False, null=True), default=list)
     released = models.CharField(max_length=50, blank=False, null=False, default='N/A')
     logo = models.URLField(max_length=1024, null=True, blank=True)
     characters = models.ManyToManyField(Characters, blank=True, related_name="Chars")
