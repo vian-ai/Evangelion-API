@@ -19,7 +19,7 @@ I created this API to refresh my knowledge on Django and Python. My interest in 
 <img src="https://i.imgur.com/NTX0wYl.png" width="700"><br>
 * Using `fetch` to fetch data from api
 
-### output
+## Response
 ```json
 [
   {
